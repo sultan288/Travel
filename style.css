@@ -28,7 +28,7 @@ html{
 }
 
 section{
-    padding: 2rem 9%;
+    padding: 2rem;
 }
 
 .heading{
@@ -55,6 +55,7 @@ section{
     border: .2rem solid var(--orange);
     cursor: pointer;
     font-size: 1.7rem;
+    border-radius: .3rem;
 }
 .btn:hover{
     background: rgba(255, 165, 0, .2);
@@ -65,11 +66,11 @@ header{
     position: fixed;
     top: 0; left: 0; right: 0;
     background: #333;
-    z-index: 1000;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 9%;
+    padding: 2rem;
 }
 
 header .logo{
@@ -308,12 +309,19 @@ header .search-bar-container label{
 
 /* ====packages==== */
 .packages .box-container{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 2rem; */
+    display: grid;
+    /* grid-template-columns: repeat(autof, minmax(100px, 1fr) ); */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 2rem;
 }
 .packages .box-container .box{
-    flex: 1 1 30rem;
+    /* flex: 1 1 30rem; */
+    /* position: relative;
+    overflow: hidden; */
+    width: 100%;
     border-radius: .5rem;
     overflow: hidden;
     box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
@@ -375,7 +383,7 @@ header .search-bar-container label{
     box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
 }
 
-/* gallery starts */
+/* gallery starts=================================== */
 .gallery .box-container{
     display: flex;
     flex-wrap: wrap;
@@ -388,7 +396,7 @@ header .search-bar-container label{
     border-radius: .5rem;
     flex: 1 1 30rem;
     height: 25rem;
-    position: relative;
+    position: relative;   
 }
 .gallery .box-container .box img{
     height: 100%;
@@ -397,17 +405,18 @@ header .search-bar-container label{
 }
 .gallery .box-container .box .content{
     position: absolute;
-    top: 100%; left: 0;
+    top: 1; left: 0; bottom: 100%;
     height: 100%;
     width: 100%;
     text-align: center;
     background: rgba(0,0,0,.7);
-    padding: 2rem;
-    padding-top: 5rem;
+    padding: 1.5rem 1rem; 
+    align-items: center;
+    justify-content: center;
 }
 
 .gallery .box-container .box:hover .content{
-    top: 0;
+    bottom: 0%;
 }
 .gallery .box-container .box .content h3{
     font-size: 2.5rem;
